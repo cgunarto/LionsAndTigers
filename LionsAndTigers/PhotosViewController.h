@@ -11,7 +11,7 @@
 @protocol TopDelegate <NSObject>
 
 
-@optional
+//@optional
 - (void)topRevealButtonTapped;
 
 @end

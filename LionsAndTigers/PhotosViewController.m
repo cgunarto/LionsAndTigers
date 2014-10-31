@@ -34,15 +34,18 @@
 
 - (IBAction)onLeftBarButtonPressed:(UIBarButtonItem *)button
 {
+    NSLog(@"Left bar button has been pressed");
+ 
     [self.delegate topRevealButtonTapped];
+   
 }
 
 #pragma mark - method
 
-- (void)topRevealButtonTapped
-{
-
-}
+//- (void)topRevealButtonTapped
+//{
+//
+//}
 
 
 //- (IBAction)panHandler:(UIPanGestureRecognizer *)gesture
