@@ -18,7 +18,9 @@
 
 @interface PhotosViewController : UIViewController
 @property (nonatomic, weak) id <TopDelegate> delegate;
+@property (nonatomic, strong) NSMutableArray *currentPhotosArray;
 
 //- (void)topRevealButtonTapped;
+-(void)refreshTheView;
 
 @end

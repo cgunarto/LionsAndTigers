@@ -16,31 +16,31 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+   
 }
 
-#pragma mark - methods
-
-- (void)tigersButtonTapped
-{
-
-}
-
-- (void)linesButtonTapped
-{
-
-}
+//#pragma mark - methods
+//
+//- (void)tigersButtonTapped
+//{
+//
+//}
+//
+//- (void)lionsButtonTapped
+//{
+//   
+//}
 
 #pragma mark - buttons
 
-- (IBAction)onLinesButtonPressed:(UIButton *)sender
+- (IBAction)onLionsButtonPressed:(UIButton *)sender
 {
-    
+    [self.delegate lionsButtonTapped];
 }
 
 - (IBAction)onTigersButtonPresed:(UIButton *)sender
 {
-    
+    [self.delegate tigersButtonTapped];
 }
 
 @end

@@ -10,6 +10,8 @@
 
 @protocol HUDDelegate <NSObject>
 
+- (void)tigersButtonTapped;
+- (void)lionsButtonTapped;
 
 @end
 
@@ -17,7 +19,6 @@
 
 @property (nonatomic, weak) id <HUDDelegate> delegate;
 
-- (void)tigersButtonTapped;
-- (void)linesButtonTapped;
+
 
 @end

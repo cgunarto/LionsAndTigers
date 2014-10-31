@@ -7,9 +7,11 @@
 //
 
 #import "PhotosViewController.h"
+#import "CustomCollectionViewCell.h"
 
-@interface PhotosViewController () <UIGestureRecognizerDelegate>
+@interface PhotosViewController () <UICollectionViewDataSource, UICollectionViewDelegate>
 //@property (weak, nonatomic) IBOutlet UIBarButtonItem *leftBarButton;
+@property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
 
 
 //@property (nonatomic, strong) UICollisionBehavior *collisionBehavior;
@@ -26,9 +28,31 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.currentPhotosArray = [@[] mutableCopy];
 //    self.leftBarButton.enabled = NO;
 //  leftBarButton.customView
 }
+
+-(void)refreshTheView
+{
+    [self.collectionView reloadData];
+}
+
+#pragma mark - delegation methods
+
+-(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
+{
+    return self.currentPhotosArray.count;
+}
+
+-(CustomCollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    CustomCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"cell" forIndexPath:indexPath];
+    cell.cellImageView.image = self.currentPhotosArray[indexPath.row];
+
+    return cell;
+}
+
 
 #pragma mark - button
 
@@ -40,7 +64,7 @@
    
 }
 
-#pragma mark - method
+//#pragma mark - method
 
 //- (void)topRevealButtonTapped
 //{
