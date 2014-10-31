@@ -16,6 +16,7 @@
 		4F2BEA0D1A0315AA00E78657 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F2BEA0C1A0315AA00E78657 /* RootViewController.m */; };
 		4F2BEA101A0315F600E78657 /* PhotosViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F2BEA0F1A0315F600E78657 /* PhotosViewController.m */; };
 		4F2BEA131A03161000E78657 /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F2BEA121A03161000E78657 /* MenuViewController.m */; };
+		FAB9CB211A041EFC003FAB0B /* CustomCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FAB9CB201A041EFC003FAB0B /* CustomCollectionViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +47,8 @@
 		4F2BEA0F1A0315F600E78657 /* PhotosViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotosViewController.m; sourceTree = "<group>"; };
 		4F2BEA111A03161000E78657 /* MenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuViewController.h; sourceTree = "<group>"; };
 		4F2BEA121A03161000E78657 /* MenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuViewController.m; sourceTree = "<group>"; };
+		FAB9CB1F1A041EFC003FAB0B /* CustomCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomCollectionViewCell.h; sourceTree = "<group>"; };
+		FAB9CB201A041EFC003FAB0B /* CustomCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomCollectionViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +98,7 @@
 				4F2BEA0F1A0315F600E78657 /* PhotosViewController.m */,
 				4F2BEA111A03161000E78657 /* MenuViewController.h */,
 				4F2BEA121A03161000E78657 /* MenuViewController.m */,
+				FAB9CB221A041F04003FAB0B /* Model */,
 				4F2BE9EF1A03156B00E78657 /* Main.storyboard */,
 				4F2BE9F21A03156B00E78657 /* Images.xcassets */,
 				4F2BE9F41A03156B00E78657 /* LaunchScreen.xib */,
@@ -127,6 +131,15 @@
 				4F2BEA001A03156B00E78657 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		FAB9CB221A041F04003FAB0B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				FAB9CB1F1A041EFC003FAB0B /* CustomCollectionViewCell.h */,
+				FAB9CB201A041EFC003FAB0B /* CustomCollectionViewCell.m */,
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -232,6 +245,7 @@
 				4F2BE9EB1A03156B00E78657 /* AppDelegate.m in Sources */,
 				4F2BEA101A0315F600E78657 /* PhotosViewController.m in Sources */,
 				4F2BE9E81A03156B00E78657 /* main.m in Sources */,
+				FAB9CB211A041EFC003FAB0B /* CustomCollectionViewCell.m in Sources */,
 				4F2BEA0D1A0315AA00E78657 /* RootViewController.m in Sources */,
 				4F2BEA131A03161000E78657 /* MenuViewController.m in Sources */,
 			);
