@@ -11,12 +11,14 @@
 @protocol TopDelegate <NSObject>
 
 
+@optional
+- (void)topRevealButtonTapped;
 
 @end
 
 @interface PhotosViewController : UIViewController
 @property (nonatomic, weak) id <TopDelegate> delegate;
 
-- (void)topRevealButtonTapped;
+//- (void)topRevealButtonTapped;
 
 @end

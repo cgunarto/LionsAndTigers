@@ -19,6 +19,14 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+
+    NSLog(@"%f", self.leftPhotosConstraint.constant);
+}
+
+-(void)topRevealButtonTapped
+{
+    self.leftPhotosConstraint.constant = 500.0;
+    self.rightPhotosConstraint.constant = 500.0;
 }
 
 

@@ -89,13 +89,13 @@
 			children = (
 				4F2BE9E91A03156B00E78657 /* AppDelegate.h */,
 				4F2BE9EA1A03156B00E78657 /* AppDelegate.m */,
-				4F2BE9EF1A03156B00E78657 /* Main.storyboard */,
 				4F2BEA0B1A0315AA00E78657 /* RootViewController.h */,
 				4F2BEA0C1A0315AA00E78657 /* RootViewController.m */,
 				4F2BEA0E1A0315F600E78657 /* PhotosViewController.h */,
 				4F2BEA0F1A0315F600E78657 /* PhotosViewController.m */,
 				4F2BEA111A03161000E78657 /* MenuViewController.h */,
 				4F2BEA121A03161000E78657 /* MenuViewController.m */,
+				4F2BE9EF1A03156B00E78657 /* Main.storyboard */,
 				4F2BE9F21A03156B00E78657 /* Images.xcassets */,
 				4F2BE9F41A03156B00E78657 /* LaunchScreen.xib */,
 				4F2BE9E51A03156B00E78657 /* Supporting Files */,
@@ -424,6 +424,7 @@
 				4F2BEA071A03156B00E78657 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		4F2BEA081A03156B00E78657 /* Build configuration list for PBXNativeTarget "LionsAndTigersTests" */ = {
 			isa = XCConfigurationList;
@@ -432,6 +433,7 @@
 				4F2BEA0A1A03156B00E78657 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
