@@ -19,12 +19,28 @@
     // Do any additional setup after loading the view.
 }
 
+#pragma mark - methods
+
+- (void)tigersButtonTapped
+{
+
+}
+
+- (void)linesButtonTapped
+{
+
+}
+
+#pragma mark - buttons
+
 - (IBAction)onLinesButtonPressed:(UIButton *)sender
 {
+    
 }
 
 - (IBAction)onTigersButtonPresed:(UIButton *)sender
 {
+    
 }
 
 @end

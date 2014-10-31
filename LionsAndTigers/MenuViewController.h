@@ -15,6 +15,8 @@
 
 @interface MenuViewController : UIViewController
 
+@property (nonatomic, weak) id <HUDDelegate> delegate;
+
 - (void)tigersButtonTapped;
 - (void)linesButtonTapped;
 
