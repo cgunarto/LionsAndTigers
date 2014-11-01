@@ -16,14 +16,26 @@
 @property (strong, nonatomic) NSMutableArray *currentTigersArray;
 @property (strong, nonatomic) NSMutableArray *currentLionsArray;
 
+#pragma mark - VC containers
 @property UINavigationController *navVC;
 @property PhotosViewController *photosVC;
 @property MenuViewController *menuVC;
+
+#pragma mark - dynamic kit properties
+@property (nonatomic, strong) UICollisionBehavior *collisionBehavior;
+@property (nonatomic, strong) UIDynamicItemBehavior *dynamicItemBehavior;
+@property (nonatomic, strong) UIGravityBehavior *gravityBehavior;
+@property (nonatomic, strong) UIDynamicAnimator *dynamicAnimator;
+@property (nonatomic, strong) UIPushBehavior *pushBehavior;
+@property (weak, nonatomic) IBOutlet UIView *shadeView;
+
 
 
 @end
 
 @implementation RootViewController
+
+#pragma mark - view controller lifecycle
 
 - (void)viewDidLoad
 {
@@ -51,7 +63,7 @@
 
 }
 
-#pragma mark - delegate method implementation
+#pragma mark - delegate methods implementation
 
 -(void)topRevealButtonTapped
 {
@@ -83,25 +95,48 @@
 
 }
 
-//#pragma mark - segue
+#pragma mark - panGuesture implementation
 
-//-(BOOL)shouldPerformSegueWithIdentifier:(NSString *)identifier sender:(id)sender
-//{
-//    return NO;
-//}
+- (IBAction)panHandler:(UIPanGestureRecognizer *)gesture
+{
+
+    CGPoint translation = [gesture translationInView:gesture.view];
+    self.leftPhotosConstraint.constant = self.leftPhotosConstraint.constant + translation.x;
+    self.rightPhotosConstraint.constant = self.rightPhotosConstraint.constant - translation.x;
+//        gesture.view.center = CGPointMake(gesture.view.center.x + translation.x, gesture.view.center.y);
+        //take where it is currently and add or subtract to it based on translation
+        //after we used the translation we want to reswt it
+    
+        [gesture setTranslation:CGPointMake(0, 0) inView:gesture.view];
+
+        CGFloat yVelocity = [gesture velocityInView:gesture.view].x;  // get the x velocity
+        if (gesture.state == UIGestureRecognizerStateEnded)
+        {
+            [self.dynamicAnimator updateItemUsingCurrentState:self.shadeView];
+    
+            if (yVelocity < -500.0) {
+                [self.gravityBehavior setGravityDirection:CGVectorMake(-1, 0)];
+                [self.dynamicItemBehavior setElasticity:0.5];
+                [self.pushBehavior setPushDirection:CGVectorMake([gesture velocityInView:gesture.view].x, 0)];
+            }
+            else if (yVelocity >= -500.0 && yVelocity < 0) {
+                [self.gravityBehavior setGravityDirection:CGVectorMake(-1, 0)];
+                [self.dynamicItemBehavior setElasticity:0.25];
+                [self.pushBehavior setPushDirection:CGVectorMake(-500.0, 0)];
+            }
+            else if (yVelocity >= 0 && yVelocity < 500.0) {
+                [self.gravityBehavior setGravityDirection:CGVectorMake(1, 0)];
+                [self.dynamicItemBehavior setElasticity:0.25];
+                [self.pushBehavior setPushDirection:CGVectorMake(500.0, 0)];
+            } else {
+                [self.gravityBehavior setGravityDirection:CGVectorMake(1, 0)];
+                [self.dynamicItemBehavior setElasticity:0.5];
+                [self.pushBehavior setPushDirection:CGVectorMake([gesture velocityInView:gesture.view].x, 0)];
+            }
+        }
 
 
-//-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-//{
-//    if ([segue.identifier isEqualToString:@"photosSegue"]) {
-//        UINavigationController *nav = segue.destinationViewController;
-//        PhotosViewController *photoVC = (PhotosViewController *)nav.topViewController;
-//        photoVC.currentPhotosArray = self.currentPhotosArray;
-//        [photoVC refreshTheView];
-//    }
-//
-//}
-
+}
 
 
 @end
