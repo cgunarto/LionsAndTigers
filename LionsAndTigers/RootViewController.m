@@ -67,9 +67,11 @@
 
 -(void)topRevealButtonTapped
 {
+    [UIView animateWithDuration:0.3 animations:^{
     self.leftPhotosConstraint.constant = 500.0;
     self.rightPhotosConstraint.constant = -500.0;
     [self.view layoutIfNeeded];
+         }];
 
 //    NSLog(@"Adjusted X %f", self.leftPhotosConstraint.constant);
 }
@@ -79,9 +81,12 @@
 
     self.photosVC.currentPhotosArray = self.currentLionsArray;
     [self.photosVC refreshTheView];
-    self.leftPhotosConstraint.constant = -16.0;
-    self.rightPhotosConstraint.constant = -16.0;
-    [self.view layoutIfNeeded];
+    [UIView animateWithDuration:0.3 animations:^{
+        self.leftPhotosConstraint.constant = -16.0;
+        self.rightPhotosConstraint.constant = -16.0;
+        [self.view layoutIfNeeded];
+    }];
+
 
 }
 
@@ -89,9 +94,14 @@
 {
     self.photosVC.currentPhotosArray = self.currentTigersArray;
     [self.photosVC refreshTheView];
-    self.leftPhotosConstraint.constant = -16.0;
-    self.rightPhotosConstraint.constant = -16.0;
-    [self.view layoutIfNeeded];
+    [UIView animateWithDuration:0.3 animations:^{
+        self.leftPhotosConstraint.constant = -16.0;
+        self.rightPhotosConstraint.constant = -16.0;
+        [self.view layoutIfNeeded];
+    }];
+//    self.leftPhotosConstraint.constant = -16.0;
+//    self.rightPhotosConstraint.constant = -16.0;
+//    [self.view layoutIfNeeded];
 
 }
 
